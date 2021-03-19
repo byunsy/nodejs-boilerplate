@@ -35,7 +35,7 @@ function LoginPage(props) {
       <Form
         name="basic"
         layout="vertical"
-        style={{ width: "25rem", padding: "4rem", border: "1px solid rgba(0, 0, 0, 0.10)" }}
+        style={{ width: "27rem", padding: "4rem", border: "1px solid rgba(0, 0, 0, 0.10)" }}
         initialValues={{ remember: true }}
         onFinish={onSubmitHandler}
         onFinishFailed={onSubmitErrorHandler}
@@ -50,7 +50,7 @@ function LoginPage(props) {
           rules={[
             {
               required: true,
-              message: "Please type in your username!",
+              message: "Please type in your email.",
             },
           ]}
         >
@@ -64,7 +64,7 @@ function LoginPage(props) {
           rules={[
             {
               required: true,
-              message: "Please type in your password!",
+              message: "Please type in your password.",
             },
           ]}
         >
@@ -85,7 +85,7 @@ function LoginPage(props) {
 
         {/* LINK -----------------------------------------------------------*/}
         <Form.Item>
-          Or <Link to="/login">register now!</Link>
+          Or <Link to="/register">register now!</Link>
         </Form.Item>
       </Form>
     </Row>
