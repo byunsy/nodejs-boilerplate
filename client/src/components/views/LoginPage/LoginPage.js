@@ -1,62 +1,95 @@
-import React, {useState} from 'react';
-import Axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { loginUser } from '../../../_actions/user_action';
-import { withRouter } from 'react-router-dom';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../../_actions/user_action";
+import { withRouter, Link } from "react-router-dom";
+import { Row, Form, Input, Button, Checkbox, message } from "antd";
 
+// ============================================================================
+// Error Message for Email/Password validation process.
+
+const onSubmitErrorHandler = (error_message) => {
+  message.error({
+    content: error_message,
+    style: { marginTop: "10vh" },
+  });
+};
+
+// ============================================================================
 function LoginPage(props) {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const onSubmitHandler = (values) => {
+    // values = {email: "", password: "", remember: true/false}
 
-    // Create react states
-    const [Email, setEmail] = useState("")
-    const [Password, setPassword] = useState("")
+    dispatch(loginUser(values)).then((response) => {
+      if (response.payload.loginSuccess) {
+        props.history.push("/");
+      } else {
+        onSubmitErrorHandler(response.payload.message);
+      }
+    });
+  };
 
-    // Handling changes made in states
-    const onEmailHandler = (event) =>{
-        setEmail(event.currentTarget.value)
-    }
-    const onPasswordHandler = (event) =>{
-        setPassword(event.currentTarget.value)
-    }
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
+  return (
+    <Row justify="center" align="middle" style={{ height: "95vh" }}>
+      <Form
+        name="basic"
+        layout="vertical"
+        style={{ width: "25rem", padding: "4rem", border: "1px solid rgba(0, 0, 0, 0.10)" }}
+        initialValues={{ remember: true }}
+        onFinish={onSubmitHandler}
+        onFinishFailed={onSubmitErrorHandler}
+      >
+        {/* HEADER ---------------------------------------------------------*/}
+        <h2 style={{ margin: "0 0 2rem 0" }}>Sign In</h2>
 
-        let body = {
-            email: Email,
-            password: Password,
-        }
+        {/* EMAIL ----------------------------------------------------------*/}
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Please type in your username!",
+            },
+          ]}
+        >
+          <Input type="email" />
+        </Form.Item>
 
-        dispatch(loginUser(body))
-            .then(response => {
-                if (response.payload.loginSuccess) {
-                    props.history.push('/')
-                } else {
-                    alert('Error')
-                }
-            })
-    }
+        {/* PASSWORD -------------------------------------------------------*/}
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please type in your password!",
+            },
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
 
-    return (
-        <div style={{
-            display: 'flex', justifyContent: 'center', 
-            alignItems: 'center', width: '100%', height: '95vh'
-        }}>
-            <form style={{ display:'flex', flexDirection:'column' }}
-                onSubmit={onSubmitHandler}>
-                <label>Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler} />
+        {/* REMEMBER ME CHECKBOX -------------------------------------------*/}
+        <Form.Item name="remember" valuePropName="checked">
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
 
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler} />
+        {/* SUBMIT BUTTON --------------------------------------------------*/}
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
 
-                <br/>
-                <button type="submit">
-                     Sign In
-                </button>
-            </form>
-        </div>
-    )
+        {/* LINK -----------------------------------------------------------*/}
+        <Form.Item>
+          Or <Link to="/login">register now!</Link>
+        </Form.Item>
+      </Form>
+    </Row>
+  );
 }
 
-export default withRouter(LoginPage)
+export default withRouter(LoginPage);
