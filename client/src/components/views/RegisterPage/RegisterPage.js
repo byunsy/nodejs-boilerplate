@@ -4,59 +4,12 @@ import { registerUser } from "../../../_actions/user_action";
 import { withRouter, Link } from "react-router-dom";
 import { Row, Form, Input, Button, Checkbox, message } from "antd";
 
-const onSubmitErrorHandler = (error_message) => {
-  message.error({
-    content: error_message,
-    style: { marginTop: "10vh" },
-  });
-};
-
+// ============================================================================
 function RegisterPage(props) {
   const dispatch = useDispatch();
 
-  // Create react states
-  //   const [Email, setEmail] = useState("");
-  //   const [Name, setName] = useState("");
-  //   const [Password, setPassword] = useState("");
-  //   const [ConfirmPassword, setConfirmPassword] = useState("");
-
-  //   // Handling changes made in states
-  //   const onEmailHandler = (event) => {
-  //     setEmail(event.currentTarget.value);
-  //   };
-  //   const onNameHandler = (event) => {
-  //     setName(event.currentTarget.value);
-  //   };
-  //   const onPasswordHandler = (event) => {
-  //     setPassword(event.currentTarget.value);
-  //   };
-  //   const onConfirmPasswordHandler = (event) => {
-  //     setConfirmPassword(event.currentTarget.value);
-  //   };
   const onSubmitHandler = (values) => {
-    // event.preventDefault();
-
-    // if (Password !== ConfirmPassword) {
-    //   return alert("Passwords do not match.");
-    // }
-
-    // let body = {
-    //   email: Email,
-    //   name: Name,
-    //   password: Password,
-    // };
-
     dispatch(registerUser(values)).then((response) => {
-      console.log("Values:", values);
-      console.log("Response:", response);
-
-      // Check passwords
-      //   if (values.password !== values.confirmPassword) {
-      //     let error_message = "Passwords do not match.";
-      //     return onSubmitErrorHandler(error_message);
-      //   }
-
-      // If successful
       if (response.payload.success) {
         props.history.push("/login");
       } else {
@@ -66,32 +19,6 @@ function RegisterPage(props) {
   };
 
   return (
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     width: "100%",
-    //     height: "95vh",
-    //   }}
-    // >
-    //   <form style={{ display: "flex", flexDirection: "column" }} onSubmit={onSubmitHandler}>
-    //     <label>Email</label>
-    //     <input type="email" value={Email} onChange={onEmailHandler} />
-
-    //     <label>Name</label>
-    //     <input type="text" value={Name} onChange={onNameHandler} />
-
-    //     <label>Password</label>
-    //     <input type="password" value={Password} onChange={onPasswordHandler} />
-
-    //     <label>Confirm Password</label>
-    //     <input type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
-
-    //     <br />
-    //     <button type="submit">Register</button>
-    //   </form>
-    // </div>
     <Row justify="center" align="middle" style={{ height: "95vh" }}>
       <Form
         name="basic"
