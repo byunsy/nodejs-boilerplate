@@ -26,7 +26,6 @@ function RegisterPage(props) {
         style={{ width: "27rem", padding: "4rem", border: "1px solid rgba(0, 0, 0, 0.10)" }}
         initialValues={{ remember: true }}
         onFinish={onSubmitHandler}
-        // onFinishFailed={onSubmitErrorHandler}
       >
         {/* HEADER ---------------------------------------------------------*/}
         <h2 style={{ margin: "0 0 2rem 0" }}>Register</h2>
@@ -87,6 +86,7 @@ function RegisterPage(props) {
               required: true,
               message: "Please confirm your password.",
             },
+            // Check if password and confirmPassword match
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue("password") === value) {
@@ -105,6 +105,7 @@ function RegisterPage(props) {
           name="conditions"
           valuePropName="checked"
           rules={[
+            // Need to agree to the terms before registering
             {
               validator: (_, value) =>
                 value
