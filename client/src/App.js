@@ -3,22 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "./components/views/LandingPage/LandingPage";
 import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
+import NavBar from "./components/views/NavBar/NavBar";
 import Auth from "./hoc/auth";
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 function App() {
   return (
     <div>
-      {/* <Header style={{ padding: 0, background: "white" }}> */}
-      <Menu mode="horizontal" defaultSelectedKeys={["1"]}>
-        <Menu.Item key="1">Home</Menu.Item>
-        <Menu.Item key="2">Nav 2</Menu.Item>
-        <Menu.Item key="3">Nav 3</Menu.Item>
-      </Menu>
-      {/* </Header> */}
-
+      <NavBar />
       <Content>
         <Router>
           <Switch>
