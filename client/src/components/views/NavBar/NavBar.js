@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav className="menuBar">
       <div className="logo">
-        <a href="">logo</a>
+        <a href="./">logo</a>
       </div>
 
       <div className="menuCon">
@@ -35,16 +35,16 @@ function Navbar() {
         <Drawer
           title="Basic Drawer"
           placement="right"
-          closable={false}
+          closable={true}
           onClose={onClose}
           visible={visible}
-          width="400px"
+          width="70vw"
         >
-          <a href="/">Home</a>
-          <a href="/">Projects</a>
-          <a href="/">About</a>
-          <a href="/login">Sign in</a>
-          <a href="/register">Register</a>
+          <a href="./">Home</a>
+          <a href="./">Projects</a>
+          <a href="./">About</a>
+          <a href="./login">Sign in</a>
+          <a href="./register">Register</a>
         </Drawer>
       </div>
     </nav>
