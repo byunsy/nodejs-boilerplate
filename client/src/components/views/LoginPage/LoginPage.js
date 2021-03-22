@@ -31,7 +31,7 @@ function LoginPage(props) {
   };
 
   return (
-    <Row justify="center" align="middle" style={{ height: "95vh" }}>
+    <Row justify="center" align="middle" style={{ height: "80vh" }}>
       <Form
         name="basic"
         layout="vertical"

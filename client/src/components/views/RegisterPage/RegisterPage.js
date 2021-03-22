@@ -19,7 +19,7 @@ function RegisterPage(props) {
   };
 
   return (
-    <Row justify="center" align="middle" style={{ height: "95vh" }}>
+    <Row justify="center" align="middle" style={{ height: "85vh" }}>
       <Form
         name="basic"
         layout="vertical"
