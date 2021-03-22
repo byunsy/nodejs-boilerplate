@@ -37,6 +37,12 @@
   }
 }
 
+.App-landing-pic {
+  display: block;
+  height: 45vmin;
+  margin: 5rem auto;
+}
+
 /* NAVBAR */
 @import "~antd/dist/antd.css";
 

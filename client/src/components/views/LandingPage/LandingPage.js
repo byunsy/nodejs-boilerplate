@@ -1,6 +1,8 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
+import { ReactComponent as LandingPic } from "../../../landing2.svg";
+import "./LandingPage.css";
 
 function LandingPage(props) {
   const onClickHandler = () => {
@@ -14,18 +16,14 @@ function LandingPage(props) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "95vh",
-      }}
-    >
-      <h1>Landing Page</h1>
-
-      <button onClick={onClickHandler}>Sign Out</button>
+    <div className="container">
+      {/* <div>
+        <button onClick={onClickHandler}>Sign Out</button>
+      </div> */}
+      <LandingPic className="landing-pic" />
+      <div className="landing-info">
+        <h1>Landing Page</h1>
+      </div>
     </div>
   );
 }
