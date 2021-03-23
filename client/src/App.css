@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,11 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+/* =========================================================================
+ * LANDING PAGE SVG 
+ * ========================================================================= */
 
 .App-landing-pic {
   display: block;
@@ -43,7 +47,9 @@
   margin: 5rem auto;
 }
 
-/* NAVBAR */
+/* =========================================================================
+ * NAVBAR 
+ * ========================================================================= */
 @import "~antd/dist/antd.css";
 
 .menuBar {
@@ -66,7 +72,7 @@
 }
 
 .menuCon {
-  width: calc(100% - 150px);
+  width: calc(100% - 115px);
   float: left;
   padding: 1rem 0;
 }
@@ -146,14 +152,6 @@
 .ant-drawer-body :hover {
   color: #0050b3;
 }
-/* 
-.ant-drawer-body .ant-menu-horizontal {
-  border-bottom: none;
-}
-
-.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
-  border-bottom-color: transparent;
-} */
 
 @media (max-width: 740px) {
   .barsMenu {
@@ -167,14 +165,6 @@
 
   .logo a {
     margin-left: -20px;
-  }
-  /* 
-  .menuCon .ant-menu-item,
-  .menuCon .ant-menu-submenu-title {
-    padding: 100px 20px;
-  } */
-
-  .logo a {
     padding: 1.5rem 2.75rem;
   }
 }
