@@ -48,22 +48,22 @@ npm install
 
 Landing page when the user is not signed in.
 
-![](images/image-landing.png)
+![](images/image-landing.PNG)
 
 The user can create an account using the register form.
 
-![](images/image-register.png)
+![](images/image-register.PNG)
 
 The user can sign in.
 
-![](images/image-signin.png)
+![](images/image-signin.PNG)
 
 Home page when the user is signed in. Notice that the navigation bar displays "Sign Out" now.
 
-![](images/image-landing2.png)
+![](images/image-landing2.PNG)
 
 The website is also responsive.
 
 |           Landing Page           |         Navigation Drawer         |
 | :------------------------------: | :-------------------------------: |
-| ![](images/image-responsive.png) | ![](images/image-responsive2.png) |
+| ![](images/image-responsive.PNG) | ![](images/image-responsive2.PNG) |
