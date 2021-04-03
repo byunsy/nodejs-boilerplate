@@ -12,16 +12,16 @@ const { Content } = Layout;
 function App() {
   return (
     <div>
-      <NavBar />
-      <Content>
-        <Router>
+      <Router>
+        <NavBar />
+        <Content>
           <Switch>
             <Route exact path="/" component={Auth(LandingPage, null)} />
             <Route exact path="/login" component={Auth(LoginPage, false)} />
             <Route exact path="/register" component={Auth(RegisterPage, false)} />
           </Switch>
-        </Router>
-      </Content>
+        </Content>
+      </Router>
     </div>
   );
 }
