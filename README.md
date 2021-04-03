@@ -6,7 +6,7 @@ This is a simple web development boilerplate built with the MERN stack. The mini
 
 ## Installation
 
-I used node.js version 14.16.0 and npm version 6.14.11
+I used node.js version 14.16.0 and npm version 6.14.11.
 
 ```bash
 nvm install 14.16.0
@@ -46,23 +46,23 @@ npm install
 
 ## Demonstrations
 
-### Landing page when the user is not signed in.
+Landing page when the user is not signed in.
 
 ![](images/image-landing.png)
 
-### The user can create an account using the register form.
+The user can create an account using the register form.
 
 ![](images/image-register.png)
 
-### The user can sign in.
+The user can sign in.
 
 ![](images/image-signin.png)
 
-### Home page when the user is signed in. Notice that the navigation bar displays "Sign Out" now.
+Home page when the user is signed in. Notice that the navigation bar displays "Sign Out" now.
 
 ![](images/image-landing2.png)
 
-### The website is also responsive.
+The website is also responsive.
 
 |           Landing Page           |         Navigation Drawer         |
 | :------------------------------: | :-------------------------------: |
